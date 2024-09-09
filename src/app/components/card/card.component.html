@@ -1,0 +1,13 @@
+<article>
+  <div class="img-container">
+    <img [ngSrc]="article.image" fill alt="">
+  </div>
+  <div class="text-center">
+    <h3>{{article.name}}</h3>
+    <p>{{article.description}}</p>
+    <p>{{article.price}}€</p>
+  </div>
+  <div>
+    <button [disabled]="article.stock <= 0" (click)="addToCart()">Ajouter au panier</button>
+  </div>
+</article>

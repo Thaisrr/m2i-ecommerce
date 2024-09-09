@@ -1,0 +1,16 @@
+main {
+  width: 70%;
+  margin: 100px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+}

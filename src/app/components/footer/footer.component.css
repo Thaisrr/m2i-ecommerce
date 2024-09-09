@@ -1,0 +1,23 @@
+footer {
+  background-color: var(--charcoal-2);
+  color: white;
+  padding: 50px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.logo {
+  font-family: var(--alt-font);
+  font-size: 3em;
+  color: var(--tiffany-blue);
+}
+
+a:link, a:visited {
+  color: white;
+}

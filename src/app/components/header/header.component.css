@@ -1,0 +1,32 @@
+header {
+  background-color: var(--tiffany-blue);
+  padding: 50px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+}
+
+hgroup {
+  text-align: center;
+  font-size: 2em;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 70%;
+  margin: auto;
+}
+
+.photo {
+  position: relative;
+  background-color: white;
+  padding: 30px 30px 100px;
+  border-radius: 5px;
+  transform: rotate(5deg);
+}
+
+.photo img {
+  border-radius: 3px;
+}
+

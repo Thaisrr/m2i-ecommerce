@@ -1,0 +1,26 @@
+<h1>Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Stock</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (r of rollers; track r) {
+      <tr>
+        <td>{{ r.name }}</td>
+        <td>{{ r.description }}</td>
+        <td>{{ r.price }}</td>
+        <td>{{ r.stock }}</td>
+        <td>
+          <button (click)="remove(r)">Supprimer</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

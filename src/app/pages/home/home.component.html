@@ -1,0 +1,18 @@
+<app-header></app-header>
+<main>
+  <h2>Nos plus belles ventes !</h2>
+  <div class="filters">
+    <label for="search">Rechercher</label>
+    <input id="search" type="text" [(ngModel)]="search" />
+    <label for="category">Trier</label>
+    <select id="category" [(ngModel)]="order">
+      <option value="asc">Prix croissants</option>
+      <option value="desc">Prix décroissants</option>
+    </select>
+  </div>
+  <div class="grid">
+    @for (a of articles | filter: order: search; track a.id) {
+      <app-card [article]="a"></app-card>
+    }
+  </div>
+</main>
