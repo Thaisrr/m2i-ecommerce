@@ -1,37 +1,51 @@
 {
   "rollers": [
     {
-      "name": "Rollers inlines bleus",
-      "description": "De magnifiques rollers inlines, parfaits pour une pratique loisir",
-      "price": 500,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92kx5f-MKyqGSd1pSXUWuLUwE4myKBe6AgQ&s",
-      "stock": 7,
-      "id": 1
-    },
-    {
-      "name": "Rollers inlines roses",
-      "description": "Parfaits pour une pratique loisir !",
-      "price": 450,
-      "image": "https://cdn.webshopapp.com/shops/226304/files/357802307/image.jpg",
-      "stock": 2,
-      "id": 2
-    },
-    {
-      "name": "Rollers quads à fleurs",
-      "description": "Parfaits pour une pratique loisir",
-      "price": 200,
-      "image": "https://www.nomadeshop.com/100835-large_default/impala-rollerskates-roller-quad-skate-harmony-blue.jpg",
-      "stock": 5,
-      "id": 3
-    },
-    {
       "name": "Rollers quads verts",
       "description": "Parfaits pour une pratique sportive !",
       "price": 150,
       "image": "https://www.nomadeshop.com/97163-large_default/impala-rollerskates-roller-quad-forest-green.jpg",
-      "stock": 5,
+      "stock": 0,
       "id": 4
+    },
+    {
+      "name": "Roller inlines mauves",
+      "description": "fdsfjklsd jklfdsj jklfdsflsd",
+      "price": 100,
+      "image": "https://www.o-rider-shop.com/wp-content/uploads/2024/04/impinline1_fairyfloss_6_cd663c3e-50ec-44fa-a916-c7d0edf29f07_1100x.jpg.webp",
+      "stock": 2,
+      "id": 5
+    },
+    {
+      "name": "Rollers inlines bleu clair",
+      "description": "fjklds jklfds jkl fdsllkl s!",
+      "price": 160,
+      "image": "https://impalaskate.eu/cdn/shop/products/impinline1_skybluyel_5_63d39d6e-d7ab-4de2-b5cd-cf79a0a5cb9e_1500x.jpg",
+      "stock": 3,
+      "id": 6
+    },
+    {
+      "name": "Rollers quads à fleurs",
+      "description": "fjklds jklfds jkl fdsllkl s!",
+      "price": 160,
+      "image": "https://www.nomadeshop.com/100835-large_default/impala-rollerskates-roller-quad-skate-harmony-blue.jpg",
+      "stock": 3,
+      "id": 7
+    },
+    {
+      "name": "Rollers quads à léopard",
+      "description": "fjklds jklfds jkl fdsllkl s!",
+      "price": 160,
+      "image": "https://www.rollernco.com/28586-large_default/impala-quad-rollerskates-leopard.jpg",
+      "stock": 3,
+      "id": 8
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "jeanmich@mail.fr",
+      "password": "$2a$10$dLmOf9Q6oPQnyVAdS3ckpuccP8KDyRfr9hFAKs08RjqNF1Gpp0Gsy",
+      "id": 1
+    }
+  ]
 }

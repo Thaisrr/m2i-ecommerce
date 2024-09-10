@@ -1,28 +1,3 @@
 <h1>Ajouter un produit</h1>
 
-<form [formGroup]="rollerForm" (ngSubmit)="handleSubmit()">
-
-  <p>
-    <label for="name">Nom du produit</label>
-    <input id="name" formControlName="name" />
-  </p>
-  <p>
-    <label for="price">Prix</label>
-    <input id="price" type="number" formControlName="price" />
-  </p>
-  <p>
-    <label for="description">Description</label>
-    <textarea id="description" formControlName="description"></textarea>
-  </p>
-  <p>
-    <label for="image">Image</label>
-    <input id="image" formControlName="image" />
-  </p>
-  <p>
-   <label for="stock">Stock</label>
-    <input type="number" id="stock" formControlName="stock" />
-  </p>
-  <p>
-    <button>Enregistrer</button>
-  </p>
-</form>
+<app-roller-form (submitEvent)="handleSubmit($event)"></app-roller-form>

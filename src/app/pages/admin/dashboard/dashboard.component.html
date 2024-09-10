@@ -21,7 +21,12 @@
         <td>{{ r.stock }}</td>
         <td>
           <button (click)="remove(r)">Supprimer</button>
+          <a [routerLink]="['/admin/update', r.id]">Modifier</a>
         </td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="5">Aucun produit</td>
       </tr>
     }
   </tbody>

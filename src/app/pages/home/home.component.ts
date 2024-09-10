@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit{
   constructor(private rollerService: RollerService) {}
 
   ngOnInit() {
-    this.articles$ = this.rollerService.getAll();
+    this.rollerService.getAll().subscribe();
+    this.articles$ = this.rollerService.rollers$;
   }
 }

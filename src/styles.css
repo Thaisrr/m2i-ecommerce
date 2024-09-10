@@ -63,3 +63,14 @@ tbody tr:hover {
 .text-center {
   text-align: center;
 }
+
+form {
+  width: 70%;
+  margin: 50px auto;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}

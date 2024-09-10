@@ -3,6 +3,10 @@ article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .img-container {
@@ -20,4 +24,22 @@ article {
 button[disabled] {
   cursor: not-allowed;
   color: gray;
+}
+
+
+article:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  background-image: linear-gradient(to right top, #9e55cd, #ff3d99, #FF684e, #fdaf00, #a8eb12);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+article:hover:before {
+  filter: blur(10px);
 }

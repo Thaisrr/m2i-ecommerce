@@ -8,6 +8,6 @@
     <p>{{article.price}}€</p>
   </div>
   <div>
-    <button [disabled]="article.stock <= 0" (click)="addToCart()">Ajouter au panier</button>
+    <button [disabled]="article.stock <= 0 || loading" (click)="addToCart()">Ajouter au panier</button>
   </div>
 </article>

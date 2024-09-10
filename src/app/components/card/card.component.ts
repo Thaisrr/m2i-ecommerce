@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Roller} from "../../utils/types/roller.type";
-import {RollerService} from "../../utils/services/roller.service";
 import {NgOptimizedImage} from "@angular/common";
 import {CartService} from "../../utils/services/cart.service";
 
@@ -13,16 +12,22 @@ import {CartService} from "../../utils/services/cart.service";
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent implements OnInit{
+export class CardComponent implements OnChanges{
   @Input() article!: Roller;
+  loading = false;
 
   constructor(private cartService: CartService) {}
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
   }
 
   addToCart() {
     this.cartService.add(this.article);
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000)
   }
 
 }

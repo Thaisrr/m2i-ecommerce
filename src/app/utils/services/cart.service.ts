@@ -30,14 +30,17 @@ export class CartService {
     }
     this.saveCart();
     this.length$.next(this.articles.length);
-    this.rollerService.changeStock(article.id, -1)
+    this.rollerService.changeStock(article, -1).subscribe()
   }
 
   remove(articleId: number) {
+    const quantity = this.articles.find(a => a.id === articleId)?.quantity || 0;
     this.articles = this.articles.filter(a => a.id !== articleId);
-    this.rollerService.changeStock(articleId, 1)
     this.saveCart();
     this.length$.next(this.articles.length);
+    this.rollerService.getById(articleId).subscribe(
+      {next: (roller) => this.rollerService.changeStock(roller, quantity).subscribe() }
+    )
   }
 
   getTotal() {

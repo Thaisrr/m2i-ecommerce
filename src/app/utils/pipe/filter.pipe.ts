@@ -8,6 +8,7 @@ import {Roller} from "../types/roller.type";
 export class FilterPipe implements PipeTransform {
 
   transform(value: Roller[], order: 'asc' | 'desc', search: string): Roller[] {
+    console.log(value)
     const filtered = value.filter(roller => roller.name.toLowerCase().includes(search.toLowerCase()));
     return filtered.sort((a, b) => {
       if (order === 'asc') {

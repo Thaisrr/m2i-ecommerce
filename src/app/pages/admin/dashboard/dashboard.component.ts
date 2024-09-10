@@ -3,12 +3,14 @@ import {Roller} from "../../../utils/types/roller.type";
 import {RollerService} from "../../../utils/services/roller.service";
 import {Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
