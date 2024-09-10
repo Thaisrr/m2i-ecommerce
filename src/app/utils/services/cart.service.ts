@@ -27,12 +27,12 @@ export class CartService {
       this.articles.push(cartItem);
     }
     this.saveCart();
-    this.rollerService.changeStock(article, -1)
+    this.rollerService.changeStock(article.id, -1)
   }
 
-  remove(article: Roller) {
-    this.articles = this.articles.filter(a => a.id !== article.id);
-    this.rollerService.changeStock(article, 1)
+  remove(articleId: number) {
+    this.articles = this.articles.filter(a => a.id !== articleId);
+    this.rollerService.changeStock(articleId, 1)
     this.saveCart();
   }
 

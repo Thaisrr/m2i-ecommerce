@@ -1,4 +1,5 @@
 <app-header></app-header>
+@let articles = articles$ | async;
 <main>
   <h2>Nos plus belles ventes !</h2>
   <div class="filters">
@@ -11,8 +12,11 @@
     </select>
   </div>
   <div class="grid">
-    @for (a of articles | filter: order: search; track a.id) {
-      <app-card [article]="a"></app-card>
+    @if(articles) {
+      @for (a of articles | filter: order: search; track a.id) {
+        <app-card [article]="a"></app-card>
+      }
     }
+
   </div>
 </main>

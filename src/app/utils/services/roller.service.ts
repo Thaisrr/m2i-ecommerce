@@ -1,60 +1,37 @@
 import { Injectable } from '@angular/core';
 import {Roller} from "../types/roller.type";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RollerService {
-  rollers: Roller[] = [];
+  apiUrl = environment.apiUrl + '/rollers';
 
-  constructor() {
-    const rollers = localStorage.getItem('rollers');
-    if (rollers) {
-      this.rollers = JSON.parse(rollers);
-    }
-    this.rollers.forEach(r => {
-      r.price = +r.price;
-      r.stock = +r.stock;
-    })
-  }
+  constructor(private http: HttpClient) {}
 
   add(roller: Roller) {
-    if(!this.rollers.some(r => r.name === roller.name)) {
-      this.rollers.push(roller);
-      this.saveRollers();
-    } else {
-      alert(`${roller.name} existe déjà`);
-    }
+    return this.http.post<Roller>(this.apiUrl, roller);
   }
 
   remove(roller: Roller) {
     if(confirm(`Voulez-vous vraiment supprimer ${roller.name} ?`)) {
-      const i = this.rollers.findIndex(r => r.id === roller.id);
-      console.log(roller.id, i);
-      console.table(this.rollers)
-      if(i >= 0) {
-        this.rollers.splice(i, 1);
-        this.saveRollers();
-      } else {
-        alert('Aucun roller à supprimer')
-      }
+      return this.http.delete<Roller>(`${this.apiUrl}/${roller.id}`);
     }
-
+    return
   }
 
-  saveRollers() {
-    localStorage.setItem('rollers', JSON.stringify(this.rollers));
+  changeStock(rollerId: number, stock: number) {
+    return this.http.put<Roller>(`${this.apiUrl}/${rollerId}`, {stock});
   }
 
-  generateId() {
-    return (this.rollers[this.rollers.length - 1]?.id || 0 ) + 1;
+  update(roller: Roller) {
+    return this.http.put<Roller>(`${this.apiUrl}/${roller.id}`, roller);
   }
 
-  changeStock(roller: Roller, stock: number) {
-    const rollerIndex = this.rollers.findIndex(r => r.id === roller.id);
-    if(rollerIndex >= 0) {
-      this.rollers[rollerIndex].stock += stock;
-      this.saveRollers();
-    }
+  getAll(): Observable<Roller[]> {
+    return this.http.get<Roller[]>(this.apiUrl);
   }
 }

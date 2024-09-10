@@ -1,0 +1,37 @@
+{
+  "rollers": [
+    {
+      "name": "Rollers inlines bleus",
+      "description": "De magnifiques rollers inlines, parfaits pour une pratique loisir",
+      "price": 500,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92kx5f-MKyqGSd1pSXUWuLUwE4myKBe6AgQ&s",
+      "stock": 7,
+      "id": 1
+    },
+    {
+      "name": "Rollers inlines roses",
+      "description": "Parfaits pour une pratique loisir !",
+      "price": 450,
+      "image": "https://cdn.webshopapp.com/shops/226304/files/357802307/image.jpg",
+      "stock": 2,
+      "id": 2
+    },
+    {
+      "name": "Rollers quads à fleurs",
+      "description": "Parfaits pour une pratique loisir",
+      "price": 200,
+      "image": "https://www.nomadeshop.com/100835-large_default/impala-rollerskates-roller-quad-skate-harmony-blue.jpg",
+      "stock": 5,
+      "id": 3
+    },
+    {
+      "name": "Rollers quads verts",
+      "description": "Parfaits pour une pratique sportive !",
+      "price": 150,
+      "image": "https://www.nomadeshop.com/97163-large_default/impala-rollerskates-roller-quad-forest-green.jpg",
+      "stock": 5,
+      "id": 4
+    }
+  ],
+  "users": []
+}

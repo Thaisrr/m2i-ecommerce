@@ -25,11 +25,10 @@ export class AddComponent {
   constructor(private rollerService: RollerService) {}
 
   handleSubmit() {
-    const id = this.rollerService.generateId();
-    this.rollerService.add({
-      id,
-      ...this.rollerForm.value
-    } as Roller);
+    this.rollerService.add(this.rollerForm.value as Roller)
+      .subscribe(roller => {
+        this.rollerForm.reset()
+      })
 
   }
 }

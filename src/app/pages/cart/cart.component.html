@@ -11,6 +11,7 @@
         <th>Quantité</th>
         <th>Prix</th>
         <th>Total</th>
+        <th>Supprimer</th>
       </tr>
       </thead>
       <tbody>
@@ -20,6 +21,9 @@
             <td>{{item.quantity}}</td>
             <td>{{item.price}}€</td>
             <td>{{item.total}}€</td>
+            <td>
+              <button (click)="remove(item)">Supprimer</button>
+            </td>
           </tr>
         }
       </tbody>
