@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import {Roller} from "../types/roller.type";
 import {Cart, CartItem} from "../types/cart.type";
 import {RollerService} from "./roller.service";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   articles: Cart = [];
+  length$ = new BehaviorSubject(0);
 
   constructor(private rollerService: RollerService) {
     this.retrieveCart();
@@ -27,6 +29,7 @@ export class CartService {
       this.articles.push(cartItem);
     }
     this.saveCart();
+    this.length$.next(this.articles.length);
     this.rollerService.changeStock(article.id, -1)
   }
 
@@ -34,6 +37,7 @@ export class CartService {
     this.articles = this.articles.filter(a => a.id !== articleId);
     this.rollerService.changeStock(articleId, 1)
     this.saveCart();
+    this.length$.next(this.articles.length);
   }
 
   getTotal() {
@@ -44,6 +48,7 @@ export class CartService {
     const cart = localStorage.getItem('cart');
     if (cart) {
       this.articles = JSON.parse(cart);
+      this.length$.next(this.articles.length)
     }
   }
 
